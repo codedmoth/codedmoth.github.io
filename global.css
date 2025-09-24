@@ -64,6 +64,7 @@ hr {
   background-color: var(--fg-color3);
   border: none;
   border-radius: 2rem;
+  transition: background-color var(--transitionSpeed) ease;
 }
 
 .spannysup {
