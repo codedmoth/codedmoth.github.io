@@ -1,0 +1,201 @@
+
+:root {
+  --transitionSpeed: 0.25s;
+
+  --bg-color: #ffd6f9;  
+  --bg-color2: #cb82d3;
+  --bg-color3: #f5b1fc;
+  --hover-color: #c97fbf;
+  --fg-color: #220025;
+  --fg-color2: #460d39;
+  --fg-color3: #b678be;
+  --hideme-color: #5f5161;
+}
+
+.dark-mode {
+    --bg-color: #220025;
+    --bg-color2: #551546;
+    --bg-color3: #36003b;
+    --hover-color: #63205a;
+    --fg-color: #fff0fd;
+    --fg-color2: #d5b1da;
+    --fg-color3: #661553;
+    --hideme-color: #947f97;
+}
+
+
+
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  transition: color var(--transitionSpeed) ease, background-color var(--transitionSpeed) ease;
+}
+
+.card p {padding: 0px; margin: 0px;}
+.card {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--bg-color3);
+  border-radius: 15px;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 0.25rem;
+  transition: background-color var(--transitionSpeed) ease;
+}
+
+.card-main {
+  flex-direction: column;
+}
+
+
+hr {
+  height: 2px;
+  background-color: var(--fg-color3);
+  border: none;
+  border-radius: 2rem;
+}
+
+.spannysup {
+  font-size: 0.8rem; 
+  color: var(--hideme-color);
+}
+
+.card-footer {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5rem;
+}
+
+.inline {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inline-pfp {
+  justify-content: center;
+  align-items: center;
+}
+.inline-pfp img {
+  border-radius: 100%;
+  width: 25vw;
+  max-width: 7.5rem;
+  height: auto;
+}
+
+
+.names *{ 
+  margin: 0%;
+  padding: 0%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fg-color3);
+}
+
+footer > *:not(:first-child) { margin-left: 0.25rem; }
+
+button {
+  display: flex;      
+  justify-content: center;
+  align-items: center;
+  border: none;         
+  outline: none;       
+  box-shadow: none;     
+  cursor: pointer;
+  background-color: var(--bg-color2);
+  color: var(--fg-color);
+  transition: background-color var(--transitionSpeed) ease;
+}
+.round-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%; 
+}
+
+
+button.round-button:hover { background-color: var(--hover-color); }
+button.round-button:hover svg > path { fill: var(--fg-color) }
+.round-button svg > path {
+  fill: var(--fg-color2);  
+  transition: fill var(--transitionSpeed) ease;
+}
+
+/* DON'T USE EMPTY RULESETS >:#
+   Empty rulesets are here because if i don't have them here i am going to forget they exist and if i forget they exist then when i go to edit them if i want to i will have issues :) 
+   thank you for coming to my ted talk.*/
+.button-theme {}
+
+.button-cookie {}
+
+/* Cookie Pop-up stuff */
+
+#popup {
+  /* Hides the pop-up by default */
+  visibility: hidden; 
+  opacity: 0; 
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  display: flex;
+
+  /* Positions the pop-up on top of everything else */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 1000; /* Ensures it's on top of other elements */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-buttons {
+  flex-direction: row;
+  display: flex;
+}
+
+.popup-buttons button:not(:first-child) { margin-left: 10px }
+
+.cookies-popup {
+  display: none;
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 25px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cookies-popup h2 { margin-bottom: 0px; }
+.cookies-popup p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.cookies-popup sup {
+  color: var(--fg-color2);
+  font-size: 75%;
+}
+.cookies-button {
+  height: 2rem;
+  border-radius: 10px; 
+  font-size: 15px;
+}
+#popup.visible {
+  visibility: visible;
+  opacity: 1;
+}
